@@ -1,9 +1,5 @@
 // stylelint-disable declaration-no-important
 
-.bd-sidebar {
-  order: 0;
-}
-
 .bd-links {
   @include media-breakpoint-up(md) {
     @supports (position: sticky) {
@@ -12,15 +8,6 @@
       z-index: 1000;
     }
   }
-
-  // Override collapse behaviors
-  @include media-breakpoint-up(md) {
-    display: block !important;
-  }
-}
-
-.bd-sidenav {
-  display: none;
 }
 
 .bd-sidenav-group-link {
@@ -28,8 +15,6 @@
   font-weight: 600;
   color: rgba(0, 0, 0, .65);
   @include border-radius(.25rem);
-
-  > * { pointer-events: none; }
 
   &:hover,
   &:focus {
@@ -55,14 +40,11 @@
   &.active {
     .bd-sidenav-group-link::before {
       transform: rotate(90deg);
+      @include transition(transform .35s ease-in-out);
     }
 
     > .bd-sidenav-group-link {
       color: rgba(0, 0, 0, .85);
-    }
-
-    > .bd-sidenav {
-      display: block;
     }
   }
 }
