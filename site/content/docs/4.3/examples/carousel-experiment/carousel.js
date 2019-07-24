@@ -29,7 +29,7 @@
 
     carouselItems.forEach(function (carouselItem) {
       // Get the first carousel item's child
-      var siblings = getSiblings(carouselItem.firstChild);
+      var siblings = getSiblings(carouselItem.firstChild)
 
       // Remove .carousel-item's first child next elements
       siblings.forEach(function (sibling) {
